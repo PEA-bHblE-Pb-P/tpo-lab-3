@@ -1,17 +1,18 @@
-
+import base.wait
 import base.waitClickableAndClick
 import org.openqa.selenium.By.cssSelector
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
+import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.support.ui.ExpectedConditions.invisibilityOf
+import org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf
 import page.Page
 import place.Business
 import route.RoutePanel
-import java.time.Duration
 
-open class Sidebar(private val driver: WebDriver): Page(driver) {
+open class Sidebar(private val driver: WebDriver) : Page(driver) {
     // строка поиска
     @FindBy(xpath = "//input")
     private lateinit var searchInput: WebElement
@@ -34,13 +35,10 @@ open class Sidebar(private val driver: WebDriver): Page(driver) {
     @FindBy(css = ".search-list-view__list")
     lateinit var searchResultList: WebElement
 
-    fun inputQuery(login: String?): Business? {
+    fun inputQuery(login: String?) {
+        ExpectedConditions.elementToBeClickable(searchInput).wait(driver)
         searchInput.sendKeys(login, Keys.ENTER)
-        Thread.sleep(Duration.ofSeconds(2).toMillis())
-
-        return if (invisibilityOf(searchResultView).apply(driver))
-            Business(driver)
-        else null
+        invisibilityOf(searchResultView).wait(driver, 1)
     }
 
     fun openBusinessFromResult(i: Int = 1): Business {

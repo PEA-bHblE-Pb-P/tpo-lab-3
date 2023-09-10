@@ -3,6 +3,7 @@ import base.BaseTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.NoSuchElementException
+import place.Business
 import route.Mode
 import route.Mode.TAXI
 import route.TaxiRoute
@@ -13,7 +14,8 @@ class RoutingTest : BaseTest() {
     @Test
     fun simpleRoute() = runTest { driver ->
         val sidebar = Sidebar(driver)
-        val business = sidebar.inputQuery("кронверский 49")!!
+        sidebar.inputQuery("кронверкский 49")
+        val business = Business(driver)
         val routePanel = business.openRouteToPlace()
 
         with(routePanel) {

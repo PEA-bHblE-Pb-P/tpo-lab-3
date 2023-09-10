@@ -8,10 +8,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable
 import org.openqa.selenium.support.ui.WebDriverWait
 import java.time.Duration
 
-fun <T> ExpectedCondition<T>.wait(driver: WebDriver) {
+
+fun <T> ExpectedCondition<T>.wait(driver: WebDriver, timeoutSeconds: Long = 10L) {
     WebDriverWait(
         driver,
-        Duration.ofSeconds(10)
+        Duration.ofSeconds(timeoutSeconds)
     ).until(this)
 }
 
