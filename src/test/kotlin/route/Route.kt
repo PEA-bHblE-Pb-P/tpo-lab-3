@@ -1,9 +1,9 @@
 package route
 
+import base.Page
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
-import page.Page
 
 abstract class Route(driver: WebDriver): Page(driver) {
     abstract val mode: Mode

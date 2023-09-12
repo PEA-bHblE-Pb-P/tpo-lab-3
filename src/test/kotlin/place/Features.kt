@@ -1,8 +1,8 @@
 package place
 
+import base.Page
 import org.openqa.selenium.By.cssSelector
 import org.openqa.selenium.WebDriver
-import page.Page
 
 class Features(private val driver: WebDriver): Page(driver) {
 

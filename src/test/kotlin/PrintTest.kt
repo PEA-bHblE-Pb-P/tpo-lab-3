@@ -1,6 +1,5 @@
-package controls
-
 import base.BaseTest
+import controls.MapControls
 import org.junit.jupiter.api.Test
 
 class PrintTest: BaseTest() {

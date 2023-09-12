@@ -1,9 +1,9 @@
 package route
 
+import base.Page
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
-import page.Page
 
 class Tooltip(driver: WebDriver): Page(driver) {
     @FindBy(css = ".tooltip-content-view__title")

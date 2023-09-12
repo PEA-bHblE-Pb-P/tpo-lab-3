@@ -2,10 +2,10 @@
 import base.BaseTest
 import base.wait
 import base.waitClickableAndClick
+import controls.Sidebar
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.NoSuchElementException
-import route.Mode
 import route.Mode.TAXI
 import route.TaxiRoute
 
@@ -20,7 +20,7 @@ class RoutingTest : BaseTest() {
 
         with(routePanel) {
             routeFromInput.input("ломоносова 9")
-            val modes = Mode.values()
+            val modes = route.Mode.values()
 
             modes.forEach { mode ->
                 val modeRoute = openRoute(mode)

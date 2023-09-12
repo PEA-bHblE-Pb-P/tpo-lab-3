@@ -1,5 +1,6 @@
 
 import base.BaseTest
+import controls.Sidebar
 import org.junit.jupiter.api.Test
 
 

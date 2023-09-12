@@ -1,6 +1,6 @@
-package controls
 import base.BaseTest
 import base.wait
+import controls.MapControls
 import org.junit.jupiter.api.Test
 
 class TrafficTest : BaseTest() {
