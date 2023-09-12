@@ -44,8 +44,8 @@ tasks.jacocoTestCoverageVerification {
         rule {
             limit {
                 counter = "CLASS"
-                value = "MISSEDCOUNT"
-                minimum = "0".toBigDecimal()
+                value = "COVEREDRATIO"
+                minimum = "0.9".toBigDecimal()
             }
         }
         rule {
