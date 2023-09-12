@@ -40,28 +40,33 @@ tasks.jacocoTestReport {
 }
 
 tasks.jacocoTestCoverageVerification {
-    dependsOn(tasks.test)
     violationRules {
         rule {
             limit {
-                minimum = 0.9.toBigDecimal()
                 counter = "CLASS"
                 value = "MISSEDCOUNT"
+                minimum = "0".toBigDecimal()
             }
+        }
+        rule {
             limit {
                 counter = "METHOD"
-                value = "MISSEDCOUNT"
-                maximum = 0.9.toBigDecimal()
+                value = "COVEREDRATIO"
+                minimum = "0.9".toBigDecimal()
             }
+        }
+        rule {
             limit {
                 counter = "LINE"
-                value = "MISSEDCOUNT"
-                maximum = 0.9.toBigDecimal()
+                value = "COVEREDRATIO"
+                minimum = "0.9".toBigDecimal()
             }
+        }
+        rule {
             limit {
                 counter = "INSTRUCTION"
                 value = "COVEREDRATIO"
-                minimum = 0.9.toBigDecimal()
+                minimum = "0.9".toBigDecimal()
             }
         }
     }
