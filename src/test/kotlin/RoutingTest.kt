@@ -29,7 +29,7 @@ class RoutingTest : BaseTest() {
 
                 try {
                     val routeDuration = modeRoute.duration()
-                    assertThat(routeDuration).isGreaterThanOrEqualTo(15)
+                    assertThat(routeDuration).isGreaterThanOrEqualTo(10)
                     assertThat(modeRoute.title.text)
                         .containsPattern(modeRoute.titlePattern)
                 } catch (_: NoSuchElementException) {

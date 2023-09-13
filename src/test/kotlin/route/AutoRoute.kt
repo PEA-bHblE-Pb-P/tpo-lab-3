@@ -13,7 +13,7 @@ class AutoRoute(driver: WebDriver) : Route(driver) {
 
     @FindBy(css = ".auto-route-snippet-view__route-title")
     override lateinit var title: WebElement
-    override val titlePattern: String = "\\d{1,2} минПрибытие в \\d{1,2}:\\d{1,2}"
+    override val titlePattern: String = "\\d{1,2} минПрибытие (\\d{1,2} [а-я]{4},|) в \\d{1,2}:\\d{1,2}"
 
     @FindBy(css = ".auto-route-snippet-view__route-title-primary")
     override lateinit var duration: WebElement
