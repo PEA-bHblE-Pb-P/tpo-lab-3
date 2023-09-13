@@ -89,7 +89,7 @@ class RoutingTest : BaseTest() {
 
         val post = bar.openPost(1)
         assertThat(post.date.text)
-            .matches("\\d{1,2} \\W+, \\d{2}:\\d{2}")
+            .matches("\\d{1,2} \\W+( \\d{4})?, \\d{2}:\\d{2}")
         assertThat(post.text.text)
             .isNotBlank()
 
