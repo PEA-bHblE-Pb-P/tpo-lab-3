@@ -1,12 +1,12 @@
 package place
 
+import base.Page
 import base.wait
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.FindBy
 import org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable
-import page.Page
 
 class Rating(private val driver: WebDriver): Page(driver) {
     @FindBy(css = ".business-summary-rating-badge-view__rating")
